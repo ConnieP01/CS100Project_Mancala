@@ -1,6 +1,6 @@
 # Mancala
  
- > Authors: \<[John Chae](https://github.com/jyjeachae)\>, \<[Connie Pak](https://github.com/ConnieP01)\>, \<[Michael He](https://github.com/MSpecter1)\>
+ > Authors: [John Chae](https://github.com/jyjeachae), [Connie Pak](https://github.com/ConnieP01), [Michael He](https://github.com/MSpecter1)
  
 
 
