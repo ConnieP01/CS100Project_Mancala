@@ -1,30 +1,34 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\<"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
+# Mancala
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[John Chae](https://github.com/jyjeachae)\>, \<[Connie Pak](https://github.com/ConnieP01)\>, \<[Michael He](https://github.com/MSpecter1)\>
  
- > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
- 
- > ## Expectations
- > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
- >   * Composite, Strategy, Abstract Factory, Visitor
- > * All three design patterns need to be linked together (it can't be three distinct projects)
- > * Your project should be implemented in C/C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
+
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ >  Why is it important or interesting to you?
+ > * This was a game we used to play when we were children, and now that we’re learning more about computer science, it would be interesting to create this game     as a program. Although the game seems simple when played in real life, the design will be a lot more complex as it will allow us to implement the design      patterns we learned in class. It’ll be fun and interesting to develop this program from scratch using what we’ve learned so far.
+
+ > What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > * We plan to use the C++ language, Valgrind for memory leak checks, Git as our version control system, GitHub to host our version control development, and      GoogleTest for testing our project. 
+ 
+ > What will be the input/output of your project?
+ > * The input is each player selecting which pocket of beads on their side of the board they want to move.
+ > * The output is the current points for each player (number of beads in their bank) and displaying the output of the board after bead movement. Output final board to a text file. 
+
+ > What are the three design patterns you will be using. 
+ > * Composite
+ >   * We chose this pattern because it helps us organize our board game effectively.
+ >   * The “pockets” and the “banks” will be the “part”, and the “GameObjects” class will be the “whole” in the hierarchy.
+ >   * The board game array will contain GameObjects
+ > * Visitor
+ >   * We chose this pattern because this allows us to effectively implement the main part of the game to make sure the beads are currently being moved along the       board and the right player’s score is being incremented.
+ >   * The “visitor”, will check the class of the current selected array GameObject item and perform an operation on it 
+ >   * If the player selects pocket 1 during the game, then the visitor will empty the pocket, and begin moving the beads by visiting each item in the array
+ >   * If the item is a pocket, it will distribute beads accordingly, but if it visits the player’s bank it will simply increment it or jump past it if it's the opponent’s bank.
+> * Singleton
+>   * We chose this pattern because this pattern allows us to have a single instance of Mancala running and the other classes can access and use the resources in    the Mancala class.
+>   * The primary “Mancala” class will exist in a single instance during runtime.
+>   * Every other class will have access to it.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
