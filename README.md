@@ -37,6 +37,8 @@
 >   * Every other class will have access to it.
 
  > ## Phase II
+ > We set up the Kanban board, and we planned out our sprint for 11/15-11/24.
+ 
  > In addition to completing the "Class Diagram" section below, you will need to 
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
  >   * Backlog, TODO, In progress, In testing, Done
@@ -48,7 +50,13 @@
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- 
+ ![Class Diagram](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Class%20Diagram.png)
+ > Description:
+ > There are four classes involved: MancalaGame, GameObjects, Pockets, and Banks. The key operations are BeginGame(), SetStartPieces(), DrawBoard(), TakeTurn(int), and TallyWinner(). 
+ > The Composite pattern is for the GameObjects class as well as its inheritance classes, Pockets and Banks. It will be used to help create the board at the beginning of the game. It will also make sure that the player can quit the game and also have it be reset. Pockets should have 4 SetStartPieces() while Banks should have 0. As a result, both classes are two types of GameObjects and this is why we are using the Composite design pattern.
+> The Visitor pattern is for those three classes as well, where the operations are used to make sure the beads are moved on the board and the correct player’s scores are being incremented throughout the game. It will be used with the currently selected array GameObject item, and the “visitor” will empty the “pocket” if the player selects pocket 1 during the game and begin moving the beads by visiting each item in the array. Otherwise, if the item is a pocket, it will distribute beads accordingly, but if it visits the player’s bank it will simply increment it or jump past it if it's the opponent’s bank. This is when the key operations such as DepositPieces() will be used.
+> The Singleton pattern is used for the MancalaGame class because it ensures that there is only a single instance of the class running and creates its own unique instance in case there are no instances. The other classes will be able to use and access MancalaGame. If there is already one instance, it will ignore the creation of a new instance.  
+  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
