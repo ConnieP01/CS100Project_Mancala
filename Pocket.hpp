@@ -6,9 +6,17 @@
 class Pocket: public GameObjects {
         private:
             int PlayerNum;
-            int Pieces;
             int PlayerTurn;
         public:
+            Pocket(int playernum): GameObjects() {
+                SetPieces(4);
+                PlayerNum=playernum;
+            }
+
+            void DepositPieces(){
+                AddPieces(1); //temp
+            }
+
             
 };
 #endif
