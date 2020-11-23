@@ -1,7 +1,6 @@
 #ifndef _BOARDMANAGER_HPP_
 #define _BOARDMANAGER_HPP_
 
-#include <vector>
 #include <iostream>
 #include "Pocket.hpp"
 #include "Bank.hpp"
@@ -11,14 +10,19 @@ using namespace std;
 
 class BoardManager{
         private:
-            //vector<vector<GameObjects*>> gobjects;
-            GameObjects* gobjects[2][6];
+            int row = 2;
+            int col = 7;
+            int bankindex = 6;
+            GameObjects* gobjects[2][6]; //The game board is an array, columns 0->6 is pockets, 7 is the bank of the player
+
         public:
             BoardManager();
-            int GetNumPieces(int side, int pindex); //get the number of pieces inside a pocket/bank
+            int GetNumPieces(int side, int index); //get the number of pieces inside a pocket/bank
+            GameObjects* GetObject(int side, int index); //gets the object at the index
+            GameObjects* GetBank1(){return GetObject(0,6)}; //returns p1's bank as a GameObject pointer
+            GameObjects* GetBank2(){return GetObject(1,6)}; //returns p2's bank
             void SetStartPieces(); //use at start of the game, creates initial gameobjects
-            //bool TallyWinner(); //check if the game should end, then check who won
-            //virtual void DepositPieces(); //virtual function to deposit a piece inside a gameobject
+            int TallyWinner(); //check if the game should end, then check who won (0 for noone, 1 for 1, 2 for 2)
             void DisplayBoard(); //displays board
 };
 #endif

@@ -13,8 +13,13 @@ class Pocket: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void DepositPieces(){
-                AddPieces(1); //temp
+            void Accept(visitor ObjectVisitor){
+                //INSERT VISITOR CODE HERE
+            }
+
+            int GetPlayerNum()
+            {
+                return PlayerNum;
             }
 
             

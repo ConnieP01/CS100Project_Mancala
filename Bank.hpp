@@ -13,10 +13,14 @@ class Bank: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void DepositPieces(int num){
-                AddPieces(num); 
+            void Accept(visitor ObjectVisitor){
+                //INSERT VISITOR CODE HERE
             }
 
+            int GetPlayerNum()
+            {
+                return PlayerNum;
+            }
             
 };
 #endif
