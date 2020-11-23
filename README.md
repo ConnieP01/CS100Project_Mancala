@@ -26,15 +26,18 @@
  >   * We chose this pattern because it helps us organize our board game effectively.
  >   * The “pockets” and the “banks” will be the “part”, and the “GameObjects” class will be the “whole” in the hierarchy.
  >   * The board game array will contain GameObjects
+ >   * There will be an interface, BoardManager, that will access an array of GameObjects which will also acces Pockets and Banks. 
  > * Visitor
- >   * We chose this pattern because this allows us to effectively implement the main part of the game to make sure the beads are currently being moved along the       board and the right player’s score is being incremented.
+ >   * We chose this pattern because this allows us to effectively implement the main part of the game to make sure the beads are currently being moved along the board and the right player’s score is being incremented.
  >   * The “visitor”, will check the class of the current selected array GameObject item and perform an operation on it 
  >   * If the player selects pocket 1 during the game, then the visitor will empty the pocket, and begin moving the beads by visiting each item in the array
  >   * If the item is a pocket, it will distribute beads accordingly, but if it visits the player’s bank it will simply increment it or jump past it if it's the opponent’s bank.
 > * Singleton
->   * We chose this pattern because this pattern allows us to have a single instance of Mancala running and the other classes can access and use the resources in    the Mancala class.
->   * The primary “Mancala” class will exist in a single instance during runtime.
+>   * We chose this pattern because this pattern allows us to have a single instance of Mancala running and the other classes can access and use the resources in the MancalaGame class.
+>   * The primary “MancalaGame” class will exist in a single instance during runtime.
 >   * Every other class will have access to it.
+>   * There can be only one game of Mancala at a time.
+>   * The main class will only simulate the Mancala game for the client.
 
  > ## Phase II
  > We set up the Kanban board, and we planned out our sprint for 11/15-11/24.
