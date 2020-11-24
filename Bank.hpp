@@ -1,15 +1,15 @@
-#ifndef _POCKET_HPP_
-#define _POCKET_HPP_
+#ifndef _BANK_HPP_
+#define _BANK_HPP_
 
 #include "GameObjects.hpp"
 
-class Pocket: public GameObjects {
+class Bank: public GameObjects {
         private:
             int PlayerNum;
             int PlayerTurn;
         public:
-            Pocket(int playernum): GameObjects() {
-                SetPieces(4);
+            Bank(int playernum): GameObjects() {
+                SetPieces(0);
                 PlayerNum=playernum;
             }
 
@@ -21,7 +21,6 @@ class Pocket: public GameObjects {
             {
                 return PlayerNum;
             }
-
             
 };
 #endif
