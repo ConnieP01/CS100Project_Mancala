@@ -49,6 +49,7 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
     int sum;
     for (int i = 0; i < 2; i++)
     {
+        sum = 0 ;
         for (int j =0; j < 6; j++)
         {
             if (gobjects[i][j]->isEmpty())
@@ -62,7 +63,7 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
             break;
         }
     }
-    if (sideEmpty = 2)
+    if (sideEmpty == 2)
     {
         return 0;
     }
