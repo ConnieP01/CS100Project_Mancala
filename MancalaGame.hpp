@@ -13,6 +13,8 @@ class MancalaGame {
         int option;
         int again;
         int input;
+	int winner;
+	int playerTurn;
         int totalPieces;
         bool isValid;
         bool playAgain;

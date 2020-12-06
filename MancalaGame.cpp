@@ -11,30 +11,36 @@ MancalaGame::MancalaGame() {
         int option = 0;
         int again = 0;
         int input = 0;
+	int winner = 0;
         int totalPieces = 0;
-        bool isValid = false;
+        int PlayerTurn = 0;
+	bool isValid = false;
         bool playAgain = true;
 }
 
 void MancalaGame::GameUpdate(){
-        int PlayerTurn = 1;
+        playerTurn = 1;
 
         input = MainMenu();
         playAgain = true;
-
+	
         if(input != 1){
                 return;
         }
-
-        while(playAgain == true){
-        //      BoardManager* start = new BoardManager();
-                start->DisplayBoard();
-                int winner = 0;
+        
+	while(playAgain == true){
+		start->SetStartPieces();	
+       		start->DisplayBoard();
+		winner = 0;
                 while(winner == 0){
                         TakeTurn();
-                //      winner = start->TallyWinner();
-                        winner = 1;
-                }
+              		start->DisplayBoard();			
+			winner = start->TallyWinner();		
+			if(winner != 0){
+				start->DisplayBoard();
+			}
+			playerTurn++;	
+		}
                 cout << "Player " << winner << " wins!" << endl;
 
                 cout << "Type 1 to play again, type 2 to quit!" << endl;
@@ -56,14 +62,66 @@ void MancalaGame::GameUpdate(){
 void MancalaGame::TakeTurn() {
         int rowInput = 0;
         int colInput = 0;
+	int column = 0;
 
         cout << "Choose which pocket you want to move (Type row #, enter, and then  col #, then enter)?" << endl;
         cin >> rowInput >> colInput;
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
 
+	int counter = start->GetNumPieces(rowInput, colInput);
+	start->GetObject(rowInput, colInput)->SetPieces(0);
 
+	column = colInput;
+	
+	while(counter >= 0) {
+		if(rowInput == 0){
+			column--;
+			while(counter > 0 && column >= 0){
+				start->GetObject(rowInput, column)->AddPieces(1);
+				column--;
+				counter--;
+			}
+			if(counter > 0 && playerTurn%2 == 0)
+                        {
+	                        start->GetBank2()->AddPieces(1);
+        	         //        rowInput = 1;
+                	  //       column = 0;
+				counter--;
+                        }
+             		if (counter > 0)//else
+                       	{
+                              	column = -1;
+                      		rowInput = 1;
+			}
+			else{
+				break;
+			}
+		}																					
+		else if(rowInput == 1){
+			column++;
+			while(counter > 0 && column <= 5){
+                                start->GetObject(rowInput, column)->AddPieces(1);
+                                column++;
+				counter--;
+                        }
+			if(counter > 0 && playerTurn%2 == 1)
+                        {
 
-
+                                start->GetBank1()->AddPieces(1);
+                         	//       rowInput = 0;
+                               // column = 5;
+                                counter--;
+                        }
+                       	if(counter > 0)
+                        {
+                                column = 6;
+                                rowInput = 0;
+			}
+			else{
+				break;
+			}	
+		}
+	}
 }
 
 int MancalaGame::MainMenu() {
@@ -104,4 +162,6 @@ int MancalaGame::MainMenu() {
             cout << "Error, input is not valid. Please enter 1 or 2." << endl;
             isValid = false;
         }
+   }
+   return option;
 }

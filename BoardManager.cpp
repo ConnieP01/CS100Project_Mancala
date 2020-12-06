@@ -68,17 +68,17 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
     }
 
     //add reamining pieces
-    if (sideEmpty == 0) //if player 1's side is empty
+    if (sideEmpty == 0) //if player 2's side is empty
     {
-        for (int j =0; j < 6; j++) // add all remaining pieces to player 2
+        for (int j =0; j < 6; j++) // add all remaining pieces to player 1
         {
             gobjects[1][bankindex]->AddPieces(gobjects[1][j]->GetPieces());
 
         }
     }
-    else //if player 2's side is empty
+    else //if player 1's side is empty
     {
-        for (int i =0; i < 6; i++) // add all remaining pieces to player 1
+        for (int i =0; i < 6; i++) // add all remaining pieces to player 2
         {
             gobjects[0][bankindex]->AddPieces(gobjects[1][i]->GetPieces());
 
@@ -110,14 +110,14 @@ void BoardManager::DisplayBoard()
     cout<<endl;
 
     cout<<"| ";
-    cout<<"Player 1's Bank"; //16 spaces
+    cout<<"Player 2's Bank"; //16 spaces
     cout<<" |";
     for (int j =0; j < col-1; j++) // print player 1's side of the board (18 spaces)
     {
         cout<<"["<<gobjects[0][j]->GetPieces()<<"]"; 
     }
     cout<<"| ";
-    cout<<"Player 2's Bank";
+    cout<<"Player 1's Bank";
     cout<<" |";
     
     cout<<endl;
