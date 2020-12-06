@@ -149,18 +149,26 @@ int MancalaGame::MainMenu() {
     isValid = false;
     option = 0;
 
-    //Welcome
-    cout << "Welcome to Mancala!" << endl;
+     cout << "Welcome to Mancala!" << endl;
 
     //How to play:
-    cout << "Players begin by placing an equal number of beads in each of the pockets or pits except for" << endl;
-    cout << "the pits at the end of the board. Then, the first player picks up all the seeds from one pit" << endl;
-    cout << "from their side of the boardand deposits one seed on each following pit, except for the opponent's " << endl;
-    cout << "capture pits, which are located at the end of the board. After depositing all the seeds, if the last" << endl;
-    cout << "pit the seed was placed in is empty, it is the second player's turn. Else, the player can pick up " << endl;
-    cout << "all seeds in the last placed pitand continue. The player's turn ends when last placed pit is empty." << endl;
-    cout << "Whoever has the most seeds in their capture pit, when all the seeds are placed in the capture pits, wins the game." << endl;
-
+    cout << endl;
+    cout << "Players begin by placing an equal number of beads in each of the pockets except for the banks at each end of the board." << endl;
+    cout << "The first player picks up all the pieces from the row closest to them and deposits one pieces into each following pocket, " << endl;
+    cout << "including their bank which is the one to the right of them. Each player will avoid their opponent's bank (to the left)." << endl;
+    cout << "After depositing all the pieces, if the last pocket the seed was placed in is empty on the opponent's side, it is the " << endl;
+    cout << "second player's turn. Otherwise, the player can pick up all seeds in the last placed pocket and continue." << endl;
+    cout << endl;
+    cout << "SPECIAL RULES:" << endl;
+    cout << "1. If the last placed piece goes into an empty pocket on the player's side, then that piece along with the pieces on the " << endl;
+    cout << "   opposite pocket are collected and added onto the current player's bank." << endl;
+    cout << "2. If the lst placed piece goes into the player's bank, then the player has another turn." << endl;
+    cout << endl;
+    cout << "HOW TO WIN:" << endl;
+    cout << "When one player's row is empty, then the pieces in the opposite row are added into the other player's bank." << endl;
+    cout << "Whoever has the most seeds in their banks at the end of the game is the winner." << endl;
+    cout << endl;
+	
     //Options:
     cout << "What would you like to do? Enter a number." << endl;
     cout << "1) Play Game" << endl;
