@@ -19,8 +19,8 @@ class BoardManager{
             BoardManager();
             int GetNumPieces(int side, int index); //get the number of pieces inside a pocket/bank
             GameObjects* GetObject(int side, int index); //gets the object at the index
-            GameObjects* GetBank1(){return GetObject(0,6);}; //returns p1's bank as a GameObject pointer
-            GameObjects* GetBank2(){return GetObject(1,6);}; //returns p2's bank
+            GameObjects* GetBank2(){return GetObject(0,6);}; //returns p2's bank as a GameObject pointer
+            GameObjects* GetBank1(){return GetObject(1,6);}; //returns p1's bank
             void SetStartPieces(); //use at start of the game, creates initial gameobjects
             int TallyWinner(); //check if the game should end, then check who won (0 for noone, 1 for 1, 2 for 2)
             void DisplayBoard(); //displays board

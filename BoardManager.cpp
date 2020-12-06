@@ -57,25 +57,24 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
                 sum++;
             }
         }
-        if (sum == 6)
+	if (sum == 6)
         {
             sideEmpty=i;
             break;
         }
     }
-
     //add reamining pieces
-    if (sideEmpty == 0) //if player 1's side is empty
+    if (sideEmpty == 0) //if player 2's side is empty
     {
-        for (int j =0; j < 6; j++) // add all remaining pieces to player 2
+        for (int j =0; j < 6; j++) // add all remaining pieces to player 1
         {
             gobjects[1][bankindex]->AddPieces(gobjects[1][j]->GetPieces());
 
         }
     }
-    else if(sideEmpty==1)//if player 2's side is empty
+    else if(sideEmpty==1)//if player 1's side is empty
     {
-        for (int i =0; i < 6; i++) // add all remaining pieces to player 1
+        for (int i =0; i < 6; i++) // add all remaining pieces to player 2
         {
             gobjects[0][bankindex]->AddPieces(gobjects[0][i]->GetPieces());
 
@@ -89,20 +88,18 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
     //check who won
     if (gobjects[0][bankindex]->GetPieces()>gobjects[1][bankindex]->GetPieces())
     {
-        //P1 Won
-        return 1;
+        //P2 Won
+        return 2;
     }
     else if(gobjects[0][bankindex]->GetPieces()<gobjects[1][bankindex]->GetPieces())
     {
-        //P2 Won
-        return 2;
+        //P1 Won
+        return 1;
     }
     else
     {
         return 3; //TIE
     }
-    
-    
 }
 
 void BoardManager::DisplayBoard()
@@ -116,14 +113,14 @@ void BoardManager::DisplayBoard()
     cout<<endl;
 
     cout<<"| ";
-    cout<<"Player 1's Bank"; //16 spaces
+    cout<<"Player 2's Bank"; //16 spaces
     cout<<" |";
     for (int j =0; j < col-1; j++) // print player 1's side of the board (18 spaces)
     {
         cout<<"["<<gobjects[0][j]->GetPieces()<<"]"; 
     }
     cout<<"| ";
-    cout<<"Player 2's Bank";
+    cout<<"Player 1's Bank";
     cout<<" |";
     
     cout<<endl;

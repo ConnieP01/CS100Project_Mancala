@@ -11,33 +11,51 @@ MancalaGame::MancalaGame() {
         int option = 0;
         int again = 0;
         int input = 0;
+	int winner = 0;
         int totalPieces = 0;
-        bool isValid = false;
+        int PlayerTurn = 0;
+	bool isValid = false;
         bool playAgain = true;
+	bool sameTurn = false;
 }
 
 void MancalaGame::GameUpdate(){
-        int PlayerTurn = 1;
+        playerTurn = 1;
 
         input = MainMenu();
         playAgain = true;
-
+	
         if(input != 1){
                 return;
         }
-
-        while(playAgain == true){
-        //      BoardManager* start = new BoardManager();
-                start->DisplayBoard();
-                int winner = 0;
+        
+	while(playAgain == true){
+		start->SetStartPieces();	
+       		start->DisplayBoard();
+		winner = 0;
                 while(winner == 0){
                         TakeTurn();
-                //      winner = start->TallyWinner();
-                        winner = 1;
-                }
-                cout << "Player " << winner << " wins!" << endl;
+              		start->DisplayBoard();					
+		//	winner = start->TallyWinner();		
+			if(sameTurn == false){
+				playerTurn++;	
+			}
+			else{
+				 cout << "Last piece ended in your bank. Go again!" << endl;
+			}
+			winner = start->TallyWinner();
+	                if(winner != 0){
+                                start->DisplayBoard();
+                        }
 
-                cout << "Type 1 to play again, type 2 to quit!" << endl;
+		}
+		if(winner != 3){
+			cout << "Player " << winner << " wins!" << endl;
+        	}
+		else{
+			cout << "It's a tie!" << endl;
+		}	
+	        cout << "Type 1 to play again, type 2 to quit!" << endl;
                 cin >> input;
 
                 if(input != 1){
@@ -56,14 +74,75 @@ void MancalaGame::GameUpdate(){
 void MancalaGame::TakeTurn() {
         int rowInput = 0;
         int colInput = 0;
+	int column = 0;
+	int turn = 1;
+	sameTurn = false;
+	string topBot = "bottom row (1)";
 
+	if(playerTurn%2 == 0){
+		turn = 2;
+		topBot = "top row (0)";
+	}
+	cout << "It's Player " << turn << "'s turn. Please choose from " << topBot << "." << endl;
         cout << "Choose which pocket you want to move (Type row #, enter, and then  col #, then enter)?" << endl;
         cin >> rowInput >> colInput;
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
 
+	int counter = start->GetNumPieces(rowInput, colInput);
+	start->GetObject(rowInput, colInput)->SetPieces(0);
 
-
-
+	column = colInput;
+	
+	while(counter > 0) {
+		if(rowInput == 0){
+			column--;
+			while(counter > 0 && column >= 0){
+				start->GetObject(rowInput, column)->AddPieces(1);
+				column--;
+				counter--;
+			}
+			if(counter > 0 && playerTurn%2 == 0)
+                        {
+	                        start->GetBank2()->AddPieces(1);
+				column--;	
+				counter--;
+                        }
+             		if (counter > 0)
+                       	{
+                              	column = -1;
+                      		rowInput = 1;
+			}
+			else{
+				break;
+			}
+		}																					
+		else if(rowInput == 1){
+			column++;
+			while(counter > 0 && column <= 5){
+                                start->GetObject(rowInput, column)->AddPieces(1);
+                                column++;
+				counter--;
+                        }
+			if(counter > 0 && playerTurn%2 == 1)
+                        {
+                                start->GetBank1()->AddPieces(1);
+                        	column++;
+			        counter--;
+                        }
+                       	if(counter > 0)
+                        {
+                                column = 6;
+                                rowInput = 0;
+			}
+			else{
+				break;
+			}	
+		}
+	}
+	counter = 0;
+	if((rowInput == 1 && column == 7) || (rowInput == 0 && column == -2)){
+		sameTurn = true;			
+	}	
 }
 
 int MancalaGame::MainMenu() {
@@ -104,4 +183,6 @@ int MancalaGame::MainMenu() {
             cout << "Error, input is not valid. Please enter 1 or 2." << endl;
             isValid = false;
         }
+   }
+   return option;
 }
