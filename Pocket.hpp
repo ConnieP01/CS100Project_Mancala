@@ -19,7 +19,7 @@ class Pocket: public GameObjects {
 
             int GetPlayerNum()
             {
-                cout<<"POCKET: ";
+                //cout<<"POCKET: ";
                 return PlayerNum;
             }
 
