@@ -36,7 +36,6 @@ void MancalaGame::GameUpdate(){
                 while(winner == 0){
                         TakeTurn();
               		start->DisplayBoard();					
-		//	winner = start->TallyWinner();		
 			if(sameTurn == false){
 				playerTurn++;	
 			}
@@ -44,15 +43,17 @@ void MancalaGame::GameUpdate(){
 				 cout << "Last piece ended in your bank. Go again!" << endl;
 			}
 			winner = start->TallyWinner();
-	                if(winner != 0){
-                                start->DisplayBoard();
+                }
+                if(winner != 3){
+                        for(int i = 0; i < 2; i++){
+                                for(int j = 0; j < 6; j++){
+                                        start->GetObject(i, j)->SetPieces(0);
+                                }
                         }
-
-		}
-		if(winner != 3){
-			cout << "Player " << winner << " wins!" << endl;
-        	}
-		else{
+                        start->DisplayBoard();
+                        cout << "Player " << winner << " wins!" << endl;
+                }
+                else{
 			cout << "It's a tie!" << endl;
 		}	
 	        cout << "Type 1 to play again, type 2 to quit!" << endl;
