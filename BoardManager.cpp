@@ -5,20 +5,17 @@ BoardManager::BoardManager()
     //create board, 2d vector, set each space as a pocket/bank
     for (int i = 0; i < row; i++)
     {
-        for (int j =0; j < col; j++)
+        for (int j = 0; j < 6; j++)
         {
-            if(j == 7)
-            {
-                Bank* temp = new Bank(i);
-                gobjects[i][j] = temp;
-            }
-            else
-            {
-                Pocket* temp = new Pocket(i);
-                gobjects[i][j] = temp;
-            }
+            Pocket* temp = new Pocket(i);
+            gobjects[i][j] = temp;
         }
     }
+
+    Bank* temp1 = new Bank(0);
+    Bank* temp2 = new Bank(1);
+    gobjects[0][bankindex] = temp1;
+    gobjects[1][bankindex] = temp2;
     SetStartPieces();
 }
 
@@ -133,7 +130,8 @@ void BoardManager::DisplayBoard()
     cout<<"| ";
     cout<<"       "<< gobjects[0][bankindex]->GetPieces() <<"       "; //16 spaces, 7 spaces on each side of a potential 10s place #
     cout<<" |";
-    for (int j =0; j < col-1 ; j++) // print player 1's side of the board
+    
+    for (int j =0; j < col-1 ; j++) // print player 2's side of the board
     {
         cout<<"["<<gobjects[1][j]->GetPieces()<<"]"; 
     }
