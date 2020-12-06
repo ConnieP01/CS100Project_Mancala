@@ -63,10 +63,6 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
             break;
         }
     }
-    if (sideEmpty == 2)
-    {
-        return 0;
-    }
 
     //add reamining pieces
     if (sideEmpty == 0) //if player 1's side is empty
@@ -77,13 +73,17 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
 
         }
     }
-    else //if player 2's side is empty
+    else if(sideEmpty==1)//if player 2's side is empty
     {
         for (int i =0; i < 6; i++) // add all remaining pieces to player 1
         {
             gobjects[0][bankindex]->AddPieces(gobjects[0][i]->GetPieces());
 
         }
+    }
+    else if (sideEmpty==2)
+    {
+        return 0;
     }
     
     //check who won
@@ -92,11 +92,16 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
         //P1 Won
         return 1;
     }
-    else
+    else if(gobjects[0][bankindex]->GetPieces()<gobjects[1][bankindex]->GetPieces())
     {
         //P2 Won
         return 2;
     }
+    else
+    {
+        return 3; //TIE
+    }
+    
     
 }
 
