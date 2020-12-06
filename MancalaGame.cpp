@@ -36,7 +36,6 @@ void MancalaGame::GameUpdate(){
                 while(winner == 0){
                         TakeTurn();
               		start->DisplayBoard();					
-		//	winner = start->TallyWinner();		
 			if(sameTurn == false){
 				playerTurn++;	
 			}
@@ -44,14 +43,16 @@ void MancalaGame::GameUpdate(){
 				 cout << "Last piece ended in your bank. Go again!" << endl;
 			}
 			winner = start->TallyWinner();
-	                if(winner != 0){
-                                start->DisplayBoard();
-                        }
-
 		}
 		if(winner != 3){
+			for(int i = 0; i < 2; i++){
+				for(int j = 0; j < 6; j++){
+					start->GetObject(i, j)->SetPieces(0);
+				}
+			}
+			start->DisplayBoard();
 			cout << "Player " << winner << " wins!" << endl;
-        	}
+		}
 		else{
 			cout << "It's a tie!" << endl;
 		}	
@@ -154,16 +155,16 @@ int MancalaGame::MainMenu() {
 
     //How to play:
     cout << endl;
-    cout << "Players begin by placing an equal number of beads in each of the pockets except for the banks at each end of the board." << endl;
-    cout << "The first player picks up all the pieces from the row closest to them and deposits one pieces into each following pocket, " << endl;
+    cout << "Players begin by placing an equal number of pieces in each of the pockets except for the banks at each end of the board." << endl;
+    cout << "The first player picks up all the pieces from the row closest to them and deposits one piece into each following pocket counter-clockwise, " << endl;
     cout << "including their bank which is the one to the right of them. Each player will avoid their opponent's bank (to the left)." << endl;
-    cout << "After depositing all the pieces, if the last pocket the seed was placed in is empty on the opponent's side, it is the " << endl;
-    cout << "second player's turn. Otherwise, the player can pick up all seeds in the last placed pocket and continue." << endl;
+    cout << "After depositing all the pieces, if the last pocket the piece was placed in is empty and on the opponent's side, it is the " << endl;
+    cout << "second player's turn. Otherwise, the player can pick up all pieces in the last placed pocket and continue." << endl;
     cout << endl;
     cout << "SPECIAL RULES:" << endl;
-    cout << "1. If the last placed piece goes into an empty pocket on the player's side, then that piece along with the pieces on the " << endl;
+    cout << "1. If the last placed piece goes into an empty pocket on the current player's side, then that piece along with the pieces in the " << endl;
     cout << "   opposite pocket are collected and added onto the current player's bank." << endl;
-    cout << "2. If the lst placed piece goes into the player's bank, then the player has another turn." << endl;
+    cout << "2. If the last placed piece goes into the current player's bank, then the player has another turn." << endl;
     cout << endl;
     cout << "HOW TO WIN:" << endl;
     cout << "When one player's row is empty, then the pieces in the opposite row are added into the other player's bank." << endl;
