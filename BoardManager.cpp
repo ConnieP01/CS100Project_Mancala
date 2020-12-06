@@ -87,7 +87,7 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
     //check who won
     if (gobjects[0][bankindex]->GetPieces()>gobjects[1][bankindex]->GetPieces())
     {
-        //P1 Won
+        //P2 Won
         return 2;
     }
     else if(gobjects[0][bankindex]->GetPieces()<gobjects[1][bankindex]->GetPieces())
