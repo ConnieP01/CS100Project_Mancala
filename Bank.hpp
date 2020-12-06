@@ -13,12 +13,13 @@ class Bank: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void Accept(visitor ObjectVisitor){
+            //void Accept(visitor ObjectVisitor){
                 //INSERT VISITOR CODE HERE
-            }
+            //}
 
             int GetPlayerNum()
             {
+                //cout<<"BANK: ";
                 return PlayerNum;
             }
             

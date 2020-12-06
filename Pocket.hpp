@@ -13,12 +13,13 @@ class Pocket: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void Accept(visitor ObjectVisitor){
+            //void Accept(visitor ObjectVisitor){
                 //INSERT VISITOR CODE HERE
-            }
+            //}
 
             int GetPlayerNum()
             {
+                cout<<"POCKET: ";
                 return PlayerNum;
             }
 
