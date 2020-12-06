@@ -18,7 +18,8 @@ class MancalaGame {
         int totalPieces;
         bool isValid;
         bool playAgain;
-        BoardManager* start = new BoardManager();
+        bool sameTurn;
+	BoardManager* start = new BoardManager();
 
     public:
         MancalaGame();

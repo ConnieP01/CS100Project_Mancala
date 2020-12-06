@@ -16,6 +16,7 @@ MancalaGame::MancalaGame() {
         int PlayerTurn = 0;
 	bool isValid = false;
         bool playAgain = true;
+	bool sameTurn = false;
 }
 
 void MancalaGame::GameUpdate(){
@@ -34,16 +35,27 @@ void MancalaGame::GameUpdate(){
 		winner = 0;
                 while(winner == 0){
                         TakeTurn();
-              		start->DisplayBoard();			
-			winner = start->TallyWinner();		
-			if(winner != 0){
-				start->DisplayBoard();
+              		start->DisplayBoard();					
+		//	winner = start->TallyWinner();		
+			if(sameTurn == false){
+				playerTurn++;	
 			}
-			playerTurn++;	
-		}
-                cout << "Player " << winner << " wins!" << endl;
+			else{
+				 cout << "Last piece ended in your bank. Go again!" << endl;
+			}
+			winner = start->TallyWinner();
+	                if(winner != 0){
+                                start->DisplayBoard();
+                        }
 
-                cout << "Type 1 to play again, type 2 to quit!" << endl;
+		}
+		if(winner != 3){
+			cout << "Player " << winner << " wins!" << endl;
+        	}
+		else{
+			cout << "It's a tie!" << endl;
+		}	
+	        cout << "Type 1 to play again, type 2 to quit!" << endl;
                 cin >> input;
 
                 if(input != 1){
@@ -63,7 +75,15 @@ void MancalaGame::TakeTurn() {
         int rowInput = 0;
         int colInput = 0;
 	int column = 0;
+	int turn = 1;
+	sameTurn = false;
+	string topBot = "bottom row (1)";
 
+	if(playerTurn%2 == 0){
+		turn = 2;
+		topBot = "top row (0)";
+	}
+	cout << "It's Player " << turn << "'s turn. Please choose from " << topBot << "." << endl;
         cout << "Choose which pocket you want to move (Type row #, enter, and then  col #, then enter)?" << endl;
         cin >> rowInput >> colInput;
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
@@ -73,7 +93,7 @@ void MancalaGame::TakeTurn() {
 
 	column = colInput;
 	
-	while(counter >= 0) {
+	while(counter > 0) {
 		if(rowInput == 0){
 			column--;
 			while(counter > 0 && column >= 0){
@@ -84,11 +104,10 @@ void MancalaGame::TakeTurn() {
 			if(counter > 0 && playerTurn%2 == 0)
                         {
 	                        start->GetBank2()->AddPieces(1);
-        	         //        rowInput = 1;
-                	  //       column = 0;
+				column--;	
 				counter--;
                         }
-             		if (counter > 0)//else
+             		if (counter > 0)
                        	{
                               	column = -1;
                       		rowInput = 1;
@@ -106,11 +125,9 @@ void MancalaGame::TakeTurn() {
                         }
 			if(counter > 0 && playerTurn%2 == 1)
                         {
-
                                 start->GetBank1()->AddPieces(1);
-                         	//       rowInput = 0;
-                               // column = 5;
-                                counter--;
+                        	column++;
+			        counter--;
                         }
                        	if(counter > 0)
                         {
@@ -122,6 +139,10 @@ void MancalaGame::TakeTurn() {
 			}	
 		}
 	}
+	counter = 0;
+	if((rowInput == 1 && column == 7) || (rowInput == 0 && column == -2)){
+		sameTurn = true;			
+	}	
 }
 
 int MancalaGame::MainMenu() {
