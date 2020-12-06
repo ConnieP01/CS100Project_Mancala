@@ -30,7 +30,12 @@ int main(int argc, char *argv[])
             BManager->GetObject(i,j)->SetPieces(0);
         }
     }
-    BManager->GetBank2()->AddPieces(50);
+    BManager->GetObject(0,0)->SetPieces(6);
+    BManager->GetObject(0,1)->SetPieces(7);
+    BManager->GetObject(0,2)->SetPieces(7);
+    BManager->GetObject(0,3)->SetPieces(7);
+    BManager->GetObject(0,4)->SetPieces(8);
+    BManager->GetObject(0,5)->SetPieces(10);
     BManager->DisplayBoard();
     cout<<"THE WINNER: "<<BManager->TallyWinner()<<endl;
     BManager->DisplayBoard();
