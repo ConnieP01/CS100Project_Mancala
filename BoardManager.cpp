@@ -81,7 +81,7 @@ int BoardManager::TallyWinner() //returns 0 if noone won, returns 1 for if playe
     {
         for (int i =0; i < 6; i++) // add all remaining pieces to player 1
         {
-            gobjects[0][bankindex]->AddPieces(gobjects[1][i]->GetPieces());
+            gobjects[0][bankindex]->AddPieces(gobjects[0][i]->GetPieces());
 
         }
     }
