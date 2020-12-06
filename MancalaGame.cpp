@@ -169,6 +169,7 @@ int MancalaGame::MainMenu() {
     cout << "When one player's row is empty, then the pieces in the opposite row are added into the other player's bank." << endl;
     cout << "Whoever has the most seeds in their banks at the end of the game is the winner." << endl;
     cout << endl;
+    
     //Options:
     cout << "What would you like to do? Enter a number." << endl;
     cout << "1) Play Game" << endl;
