@@ -11,16 +11,17 @@ class BoardManager;
 class MancalaGame {
     private:
         int option;
+        int again;
+        int input;
         int totalPieces;
-        int quitGame;
-        int score;
-        //MancalaGame* game = new MancalaGame();
+        bool isValid;
+        bool playAgain;
+        BoardManager* start = new BoardManager();
 
     public:
         MancalaGame();
-        void MainMenu();
-        void BeginGame();
-        void Winner();
+        void GameUpdate();
+        void TakeTurn();
+        int MainMenu();
 };
 #endif
-
