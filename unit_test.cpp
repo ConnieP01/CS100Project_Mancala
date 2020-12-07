@@ -1,7 +1,8 @@
 #include "gtest/gtest.h"
 
+#include "BoardManager_Test.hpp"
 #include "GameObjects_test.hpp"
-#include "BoardManager_test.hpp"
+#include "MancalaGame_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
