@@ -2,8 +2,8 @@
 #define _GAMEOBJECTS_HPP_
 
 #include <vector>
-
-class MancalaVisitor; 
+#include "MancalaVisitor.hpp"
+//class MancalaVisitor; 
 
 using namespace std;
 

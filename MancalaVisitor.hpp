@@ -1,8 +1,8 @@
-#ifndef __VISITOR_HPP__
-#define __VISITOR_HPP__
+#ifndef __MANCALAVISITOR_HPP__
+#define __MANCALAVISITOR_HPP__
 
 
-#include "BoardManager.hpp"
+#include "BoardManager.cpp"
 #include "MancalaGame.hpp"
 #include <iostream> 
 #include "GameObjects.hpp"
@@ -38,5 +38,5 @@ class MancalaVisitor {
 		int addBank = 0;
 };
 
-#endif // __VISITOR_HPP__ 
+#endif // __MANCALAVISITOR_HPP__ 
 
