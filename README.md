@@ -67,6 +67,7 @@
   ![Mancala Input](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Mancala%20Input.png)
   ![Mancala Input2](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Mancala%20Input2.png)
   > Continue playing until the end.
+  
   ![Mancala Input](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Output.png)
   
  ## Installation/Usage
