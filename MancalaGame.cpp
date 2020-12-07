@@ -91,24 +91,28 @@ void MancalaGame::TakeTurn() {
         cin >> rowInput >> colInput;
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
 
-        counter = start->GetNumPieces(rowInput, colInput);
-        start->GetObject(rowInput, colInput)->SetPieces(0);
 
-        column = colInput;
+	 counter = start->GetNumPieces(rowInput, colInput);
+	start->GetObject(rowInput, colInput)->SetPieces(0);
 
-        while(counter > 0) {
-                if(rowInput == 0){
-                        column--;
-                        while(counter > 0 && column >= 0){
-                                start->GetObject(rowInput, column)->AddPieces(1);
-                                column--;
-                                counter--;
-                        }
-                        if(counter > 0 && playerTurn%2 == 0)
+	column = colInput;
+	
+	while(counter > 0) {
+		if(rowInput == 0){
+			column--;
+			while(counter > 0 && column >= 0){
+				//start->GetObject(rowInput, column)->AddPieces(1);
+				start->GetObject(rowInput, column)->Accept(visit1);
+				column--;
+				counter--;
+			}
+			if(counter > 0 && playerTurn%2 == 0)
                         {
-                                start->GetBank2()->AddPieces(1);
-                                column--;
-                                counter--;
+	                        //start->GetBank2()->AddPieces(1);
+	                        start->GetBank2()->Accept(visit1);
+				column--;	
+				counter--;
+
                         }
                         if (counter > 0)
                         {
