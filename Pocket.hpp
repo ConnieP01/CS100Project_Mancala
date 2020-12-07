@@ -12,16 +12,16 @@ class Pocket: public GameObjects {
                 SetPieces(4);
                 PlayerNum=playernum;
             }
-
+	   
             //void Accept(visitor ObjectVisitor){
-                //INSERT VISITOR CODE HERE
+              //INSERT VISITOR CODE HERE
             //}
 
             void AddPieces(int num){ Pieces+=num; } //add a number of pieces
             void SetPieces(int num){ Pieces = num; } //set number of pieces
+
             int GetPlayerNum()
             {
-                //cout<<"POCKET: ";
                 return PlayerNum;
             }
 
