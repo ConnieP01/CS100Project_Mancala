@@ -2,9 +2,9 @@
 #define _BANK_HPP_
 
 #include "GameObjects.hpp"
-#include "visitor.hpp"
+//#include "visitor.hpp"
 
-class MancalaVisitor;
+//class MancalaVisitor;
 
 class Bank: public GameObjects {
         private:

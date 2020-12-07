@@ -2,9 +2,9 @@
 #define _POCKET_HPP_
 
 #include "GameObjects.hpp"
-#include "visitor.hpp"
+//#include "visitor.hpp"
 
-class MancalaVisitor;
+//class MancalaVisitor;
 
 class Pocket: public GameObjects {
         private:

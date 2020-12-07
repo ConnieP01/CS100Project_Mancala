@@ -2,7 +2,6 @@
 #define _GAMEOBJECTS_HPP_
 
 #include <vector>
-#include "visitor.hpp"
 
 class MancalaVisitor; 
 
