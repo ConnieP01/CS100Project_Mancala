@@ -2,6 +2,9 @@
 #define _BANK_HPP_
 
 #include "GameObjects.hpp"
+#include "visitor.hpp"
+
+class MancalaVisitor;
 
 class Bank: public GameObjects {
         private:
@@ -13,9 +16,9 @@ class Bank: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            //void Accept(visitor ObjectVisitor){
-                //INSERT VISITOR CODE HERE
-            //}
+	void Accept(MancalaVisitor* visitor){
+                visitor->VisitBank(this);
+            }
 
             int GetPlayerNum()
             {

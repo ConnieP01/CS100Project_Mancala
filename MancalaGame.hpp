@@ -3,8 +3,8 @@
 
 #include "BoardManager.hpp"
 #include "GameObjects.hpp"
-//#include composite
-//#include visitor
+//#include "DistVisitor.hpp"
+#include "visitor.hpp"
 
 class BoardManager;
 
@@ -20,7 +20,7 @@ class MancalaGame {
         bool playAgain;
         bool sameTurn;
 	BoardManager* start = new BoardManager();
-
+	MancalaVisitor * visit1 = new MancalaVisitor();
     public:
         MancalaGame();
         void GameUpdate();

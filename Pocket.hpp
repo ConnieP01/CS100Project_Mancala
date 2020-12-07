@@ -2,6 +2,9 @@
 #define _POCKET_HPP_
 
 #include "GameObjects.hpp"
+#include "visitor.hpp"
+
+class MancalaVisitor;
 
 class Pocket: public GameObjects {
         private:
@@ -13,9 +16,9 @@ class Pocket: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            //void Accept(visitor ObjectVisitor){
-                //INSERT VISITOR CODE HERE
-            //}
+            void Accept(MancalaVisitor* visitor){
+                visitor->VisitPocket(this);
+            }
 
             int GetPlayerNum()
             {
