@@ -19,5 +19,4 @@ TEST(MancalaGame, Player1Win) {
   MancalaGame* test = new MancalaGame();
   test->GameUpdate();
 }
-
 #endif //_MANCALAGAME_TEST_HPP_ 

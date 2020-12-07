@@ -16,6 +16,8 @@ class Bank: public GameObjects {
             void AddPieces(int num){ Pieces+=num; } //add a number of pieces
             void SetPieces(int num){ Pieces = num; } //set number of pieces
 
+            void AddPieces(int num){ Pieces+=num; } //add a number of pieces
+            void SetPieces(int num){ Pieces = num; } //set number of pieces
             int GetPlayerNum()
             {
                 return PlayerNum;
