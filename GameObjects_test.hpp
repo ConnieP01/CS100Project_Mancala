@@ -18,12 +18,12 @@ TEST(GameObjectsTest, BankConstructor) {
 
 TEST(GameObjectsTest, ObjectsGetPieces) {
     Pocket* test = new Pocket(1);
-    EXPECT_EQ(test->GetPlayerNum()), 1);
+    EXPECT_EQ(test->GetPlayerNum(), 1);
 }
 
 TEST(GameObjectsTest, ObjectsGetPlayerNum) {
     Bank* test = new Bank(1);
-    EXPECT_EQ(test->GetPlayerNum()), 1);
+    EXPECT_EQ(test->GetPlayerNum(), 1);
 }
 
 //ADD VISITOR TESTS HERE FOR ACCEPT

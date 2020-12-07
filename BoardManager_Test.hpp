@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 
-#include "BoardManager.hpp"
+#include "BoardManager.cpp"
 
 TEST(BoardTest, StartGame) {
     BoardManager* test = new BoardManager();
@@ -32,8 +32,8 @@ TEST(BoardTest, GetObject) {
 
 TEST(BoardTest, GetBanks) {
     BoardManager* test = new BoardManager();
-    EXPECT_TRUE(test->GetBank1()) != nullptr);
-    EXPECT_TRUE(test->GetBank2()) != nullptr);
+    EXPECT_TRUE(test->GetBank1() != nullptr);
+    EXPECT_TRUE(test->GetBank2() != nullptr);
 }
 
 TEST(BoardTest, SetStartPieces) {
@@ -54,41 +54,37 @@ TEST(BoardTest, SetStartPieces) {
             EXPECT_EQ(test->GetNumPieces(i,j), 4);
         }
     }
-    //check banks
+   //check banks
     EXPECT_EQ(test->GetNumPieces(0,6), 0);
     EXPECT_EQ(test->GetNumPieces(1,6), 0);
 }
 
 TEST(BoardTest, TallyWinner1) {
     BoardManager* test = new BoardManager();
-    for (int i = 0; i < 2; i++) //test pockets
+    test->SetStartPieces();
+    for (int i = 0; i < 1; i++)
     {
         for (int j =0; j < 6; j++)
         {
-            if(i=0)
-            {
-                test->GetObject(i,j)->SetPieces(0);
-            }
+            test->GetObject(i,j)->SetPieces(0);
         }
     }
-    test->GetObject(0,6)->SetPieces(100);
-    EXPECT_EQ(test->TallyWinner(), 1)
+    test->GetBank1()->AddPieces(50);
+    EXPECT_EQ(test->TallyWinner(), 1);
 }
 
 TEST(BoardTest, TallyWinner2) {
     BoardManager* test = new BoardManager();
-    for (int i = 0; i < 2; i++) //test pockets
+    test->SetStartPieces();
+    for (int i = 1; i < 2; i++)
     {
         for (int j =0; j < 6; j++)
         {
-            if(i=1)
-            {
-                test->GetObject(i,j)->SetPieces(0);
-            }
+            test->GetObject(i,j)->SetPieces(0);
         }
     }
-    test->GetObject(1,6)->SetPieces(100);
-    EXPECT_EQ(test->TallyWinner(), 2)
+    test->GetBank2()->AddPieces(50);
+    EXPECT_EQ(test->TallyWinner(), 2);
 }
 
 
