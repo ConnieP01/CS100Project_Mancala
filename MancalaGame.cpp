@@ -23,6 +23,8 @@ MancalaGame::MancalaGame() {
         bool sameTurn = false;
 }
 
+MancalaGame* MancalaGame::instance = new MancalaGame();
+
 void MancalaGame::GameUpdate(){
         playerTurn = 1;
 
@@ -91,7 +93,7 @@ void MancalaGame::TakeTurn() {
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
 
 
-	 counter = start->GetNumPieces(rowInput, colInput);
+	counter = start->GetNumPieces(rowInput, colInput);
 	start->GetObject(rowInput, colInput)->SetPieces(0);
 
 	column = colInput;
