@@ -21,6 +21,8 @@ class MancalaGame {
         int colInput;
         int column;
         int counter;
+	int bank1;
+	int bank2;
         bool isValid;
         bool playAgain;
         bool sameTurn;
@@ -35,6 +37,8 @@ class MancalaGame {
 	void GameUpdate();
         void TakeTurn();
         int MainMenu();
+	int getBank1();
+	int getBank2();
         int getRow();
         int getCol();
         int getCount();
