@@ -1,5 +1,5 @@
-#ifndef MANCALAGAME_HPP
-#define MANCALAGAME_HPP
+#ifndef _MANCALAGAME_HPP
+#define _MANCALAGAME_HPP
 
 #include "BoardManager.hpp"
 #include "GameObjects.hpp"
@@ -9,29 +9,34 @@
 class BoardManager;
 
 class MancalaGame {
-    private:
+	private:
+        MancalaGame();
         int option;
         int again;
         int input;
-	int winner;
-	int playerTurn;
+        int winner;
+        int playerTurn;
         int totalPieces;
-	int rowInput;
-	int colInput;
-	int column;
-	int counter;
+        int rowInput;
+        int colInput;
+        int column;
+        int counter;
         bool isValid;
         bool playAgain;
         bool sameTurn;
-	BoardManager* start = new BoardManager();
-	MancalaVisitor * visit1 = new MancalaVisitor();
-    public:
-        MancalaGame();
-        void GameUpdate();
+        BoardManager* start = new BoardManager();
+        MancalaVisitor * visit1 = new MancalaVisitor();
+        static MancalaGame* instance;
+
+       public:
+        static MancalaGame* getInstance(){
+                  return instance;
+	}
+	void GameUpdate();
         void TakeTurn();
         int MainMenu();
-	int getRow();
-	int getCol();
-	int getCount();
+        int getRow();
+        int getCol();
+        int getCount();
 };
 #endif

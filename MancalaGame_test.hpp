@@ -4,19 +4,24 @@
 #include "gtest/gtest.h"
 
 #include "MancalaGame.cpp"
+//#include "BoardManager.cpp"
 
 TEST(MainMenu, OptionOne) {
-   MancalaGame* test = new MancalaGame();
-   EXPECT_EQ(test->MainMenu(), 1);
+//   MancalaGame* test = new MancalaGame();
+   	 MancalaGame* game = MancalaGame::getInstance();
+	EXPECT_EQ(game->MainMenu(), 1);
 }
 
 TEST(MainMenu, OptionTwo) {
-  MancalaGame* test = new MancalaGame();
-  EXPECT_EQ(test->MainMenu(), 2);
+ // MancalaGame* test = new MancalaGame();
+  	 MancalaGame* game = MancalaGame::getInstance();
+	EXPECT_EQ(game->MainMenu(), 2);
 }
 
 TEST(MancalaGame, Player1Win) {
-  MancalaGame* test = new MancalaGame();
-  test->GameUpdate();
+ // MancalaGame* test = new MancalaGame();
+ 	 MancalaGame* game = MancalaGame::getInstance();
+	 game->GameUpdate();
+	 //EXPECT_TRUE(game->getBank1()->countPieces() > game->getBank2()->countPieces());
 }
 #endif //_MANCALAGAME_TEST_HPP_ 
