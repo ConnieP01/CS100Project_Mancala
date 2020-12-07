@@ -13,7 +13,11 @@ MancalaGame::MancalaGame() {
         int input = 0;
         int winner = 0;
         int totalPieces = 0;
-        int PlayerTurn = 0;
+        int rowInput = 0;
+	int colInput = 0;
+	int column = 0;
+	int counter = 0;
+	int PlayerTurn = 0;
         bool isValid = false;
         bool playAgain = true;
         bool sameTurn = false;
@@ -73,9 +77,6 @@ void MancalaGame::GameUpdate(){
 }
 
 void MancalaGame::TakeTurn() {
-        int rowInput = 0;
-        int colInput = 0;
-        int column = 0;
         int turn = 1;
         sameTurn = false;
         string topBot = "bottom row (1)";
@@ -89,7 +90,7 @@ void MancalaGame::TakeTurn() {
         cin >> rowInput >> colInput;
         cout << "Selected pocket has " << start->GetNumPieces(rowInput, colInput) << endl;
 
-        int counter = start->GetNumPieces(rowInput, colInput);
+        counter = start->GetNumPieces(rowInput, colInput);
         start->GetObject(rowInput, colInput)->SetPieces(0);
 
         column = colInput;
@@ -195,4 +196,16 @@ int MancalaGame::MainMenu() {
         }
    }
    return option;
+}
+
+int MancalaGame::getRow(){
+	return rowInput;
+}
+
+int MancalaGame::getCol(){
+	return column;
+}
+
+int MancalaGame::getCount(){
+	return counter;
 }
