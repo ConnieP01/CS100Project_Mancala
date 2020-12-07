@@ -1,19 +1,8 @@
 #ifndef __MANCALAVISITOR_HPP__
 #define __MANCALAVISITOR_HPP__
 
-
-#include "BoardManager.cpp"
-#include "MancalaGame.hpp"
 #include <iostream> 
 #include "GameObjects.hpp"
-#include "Bank.hpp"
-#include "Pocket.hpp"
-
-class BoardManager;
-class GameObjects;
-class Pocket;
-class Bank; 
-
 
 class MancalaVisitor {
 	public: 
@@ -22,7 +11,7 @@ class MancalaVisitor {
 		virtual void VisitPocket(Pocket* p) = 0;
 		virtual void VisitBank(Bank* b) = 0;
 */
-		void VisitPocket(Pocket* p){
+		void VisitPocket(GameObjects* p){
 			 p->AddPieces(1);
 			/*
  			If the last piece you drop is in an empty pocket on your side, you capture that piece and any pieces in the pocket directly
@@ -33,7 +22,7 @@ class MancalaVisitor {
 				start-> 
   			*/
 		}
-        	void VisitBank(Bank* b){b->AddPieces(1);}
+        void VisitBank(GameObjects* b){b->AddPieces(1);}
 	private:
 		int addBank = 0;
 };

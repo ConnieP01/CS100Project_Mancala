@@ -2,11 +2,10 @@
 #define _GAMEOBJECTS_HPP_
 
 #include <vector>
-#include "MancalaVisitor.hpp"
-//class MancalaVisitor; 
+//#include "MancalaVisitor.hpp"
 
 using namespace std;
-
+class MancalaVisitor;
 class GameObjects{
         protected:
             int Pieces;

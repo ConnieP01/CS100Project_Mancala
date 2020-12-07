@@ -2,10 +2,7 @@
 #define _POCKET_HPP_
 
 #include "GameObjects.hpp"
-//#include "visitor.hpp"
-
-//class MancalaVisitor;
-
+#include "MancalaVisitor.hpp"
 class Pocket: public GameObjects {
         private:
             int PlayerNum;

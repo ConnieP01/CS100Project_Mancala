@@ -2,10 +2,7 @@
 #define _BANK_HPP_
 
 #include "GameObjects.hpp"
-//#include "visitor.hpp"
-
-//class MancalaVisitor;
-
+#include "MancalaVisitor.hpp"
 class Bank: public GameObjects {
         private:
             int PlayerNum;
