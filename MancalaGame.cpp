@@ -51,7 +51,8 @@ void MancalaGame::GameUpdate(){
                 if(winner != 3){
                         for(int i = 0; i < 2; i++){
                                 for(int j = 0; j < 6; j++){
-                                        start->GetObject(i, j)->SetPieces(0);
+	        			cout << getRow() << endl;
+        	                        start->GetObject(i, j)->SetPieces(0);
                                 }
                         }
                         start->DisplayBoard();
