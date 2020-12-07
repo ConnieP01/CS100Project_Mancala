@@ -32,8 +32,8 @@ TEST(BoardTest, GetObject) {
 
 TEST(BoardTest, GetBanks) {
     BoardManager* test = new BoardManager();
-    EXPECT_TRUE(test->GetBank1()) != nullptr);
-    EXPECT_TRUE(test->GetBank2()) != nullptr);
+    EXPECT_TRUE(test->GetBank1() != nullptr);
+    EXPECT_TRUE(test->GetBank2() != nullptr);
 }
 
 TEST(BoardTest, SetStartPieces) {
