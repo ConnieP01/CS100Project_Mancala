@@ -39,4 +39,9 @@ int main(int argc, char *argv[])
     BManager->DisplayBoard();
     cout<<"THE WINNER: "<<BManager->TallyWinner()<<endl;
     BManager->DisplayBoard();
+
+    if(BManager->GetBank1()!=nullptr)
+    {
+        cout<<"TRUE"<<endl;
+    }
 }

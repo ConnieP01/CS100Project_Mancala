@@ -9,7 +9,7 @@ class MancalaVisitor;
 using namespace std;
 
 class GameObjects{
-        private:
+        protected:
             int Pieces;
         public:
             GameObjects(){};

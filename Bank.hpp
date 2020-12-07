@@ -20,6 +20,8 @@ class Bank: public GameObjects {
                 visitor->VisitBank(this);
             }
 
+            void AddPieces(int num){ Pieces+=num; } //add a number of pieces
+            void SetPieces(int num){ Pieces = num; } //set number of pieces
             int GetPlayerNum()
             {
                 //cout<<"BANK: ";
