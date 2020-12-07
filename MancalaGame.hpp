@@ -16,6 +16,10 @@ class MancalaGame {
 	int winner;
 	int playerTurn;
         int totalPieces;
+	int rowInput;
+	int colInput;
+	int column;
+	int counter;
         bool isValid;
         bool playAgain;
         bool sameTurn;
@@ -26,5 +30,8 @@ class MancalaGame {
         void GameUpdate();
         void TakeTurn();
         int MainMenu();
+	int getRow();
+	int getCol();
+	int getCount();
 };
 #endif

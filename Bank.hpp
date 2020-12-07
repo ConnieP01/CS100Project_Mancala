@@ -13,15 +13,15 @@ class Bank: public GameObjects {
                 PlayerNum=playernum;
             }
 
-	void Accept(MancalaVisitor* visitor){
+          	void Accept(MancalaVisitor* visitor){
                 visitor->VisitBank(this);
             }
 
             void AddPieces(int num){ Pieces+=num; } //add a number of pieces
             void SetPieces(int num){ Pieces = num; } //set number of pieces
+        
             int GetPlayerNum()
             {
-                //cout<<"BANK: ";
                 return PlayerNum;
             }
             
