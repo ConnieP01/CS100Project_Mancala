@@ -66,11 +66,10 @@
  ## Screenshots
   ![Mancala Input](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Mancala%20Input.png)
   ![Mancala Input2](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Mancala%20Input2.png)
-  > * Continue playing until the end.
+  > Continue playing until the end.
   ![Mancala Input](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Output.png)
   
  ## Installation/Usage
- > Instructions on installing and running your application
+ > Open the MancalaRunner exe.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+ > We used Gtest suite.
