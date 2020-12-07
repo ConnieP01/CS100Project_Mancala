@@ -14,7 +14,7 @@ TEST(MainMenu, OptionOne) {
 
 TEST(MainMenu, OptionTwo) {
  // MancalaGame* test = new MancalaGame();
-  	 MancalaGame* game = MancalaGame::getInstance();
+  	MancalaGame* game = MancalaGame::getInstance();
 	EXPECT_EQ(game->MainMenu(), 2);
 }
 
@@ -22,6 +22,6 @@ TEST(MancalaGame, Player1Win) {
  // MancalaGame* test = new MancalaGame();
  	 MancalaGame* game = MancalaGame::getInstance();
 	 game->GameUpdate();
-	 //EXPECT_TRUE(game->getBank1()->countPieces() > game->getBank2()->countPieces());
+	 EXPECT_TRUE(game->getBank1() > game->getBank2());
 }
 #endif //_MANCALAGAME_TEST_HPP_ 

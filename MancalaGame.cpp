@@ -18,6 +18,8 @@ MancalaGame::MancalaGame() {
 	int column = 0;
 	int counter = 0;
 	int PlayerTurn = 0;
+	int bank1 = 0;
+	int bank2 = 0;
         bool isValid = false;
         bool playAgain = true;
         bool sameTurn = false;
@@ -56,7 +58,8 @@ void MancalaGame::GameUpdate(){
                               			start->GetObject(i, j)->SetPieces(0);
                                 }
                         }
-                        start->DisplayBoard();
+			bank1 = start->GetObject(1, 6)->GetPieces();
+			bank2 = start->GetObject(0, 6)->GetPieces();
                         cout << "Player " << winner << " wins!" << endl;
                 }
                 else{
@@ -202,6 +205,14 @@ int MancalaGame::MainMenu() {
         }
    }
    return option;
+}
+
+int MancalaGame::getBank1(){
+	return bank1;
+}
+
+int MancalaGame::getBank2(){
+	return bank2;
 }
 
 int MancalaGame::getRow(){
