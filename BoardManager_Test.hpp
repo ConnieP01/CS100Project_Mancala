@@ -72,7 +72,7 @@ TEST(BoardTest, TallyWinner1) {
         }
     }
     test->GetObject(0,6)->SetPieces(100);
-    EXPECT_EQ(test->TallyWinner(), 1)
+    EXPECT_EQ(test->TallyWinner(), 1);
 }
 
 TEST(BoardTest, TallyWinner2) {
@@ -88,7 +88,7 @@ TEST(BoardTest, TallyWinner2) {
         }
     }
     test->GetObject(1,6)->SetPieces(100);
-    EXPECT_EQ(test->TallyWinner(), 2)
+    EXPECT_EQ(test->TallyWinner(), 2);
 }
 
 
