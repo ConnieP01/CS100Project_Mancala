@@ -4,7 +4,7 @@
 #include "BoardManager.hpp"
 #include "GameObjects.hpp"
 //#include "DistVisitor.hpp"
-#include "visitor.hpp"
+#include "MancalaVisitor.hpp"
 
 class BoardManager;
 
