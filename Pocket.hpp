@@ -17,6 +17,8 @@ class Pocket: public GameObjects {
                 //INSERT VISITOR CODE HERE
             //}
 
+            void AddPieces(int num){ Pieces+=num; } //add a number of pieces
+            void SetPieces(int num){ Pieces = num; } //set number of pieces
             int GetPlayerNum()
             {
                 //cout<<"POCKET: ";
