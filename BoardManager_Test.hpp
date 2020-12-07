@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 
-#include "BoardManager.hpp"
+#include "BoardManager.cpp"
 
 TEST(BoardTest, StartGame) {
     BoardManager* test = new BoardManager();
