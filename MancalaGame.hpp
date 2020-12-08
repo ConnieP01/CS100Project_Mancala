@@ -1,5 +1,5 @@
-#ifndef MANCALAGAME_HPP
-#define MANCALAGAME_HPP
+#ifndef _MANCALAGAME_HPP
+#define _MANCALAGAME_HPP
 
 #include "BoardManager.hpp"
 #include "GameObjects.hpp"
@@ -10,17 +10,20 @@ class BoardManager;
 class MancalaVisitor;
 
 class MancalaGame {
-    private:
+	private:
+        MancalaGame();
         int option;
         int again;
         int input;
-	int winner;
-	int playerTurn;
+        int winner;
+        int playerTurn;
         int totalPieces;
-	int rowInput;
-	int colInput;
-	int column;
-	int counter;
+        int rowInput;
+        int colInput;
+        int column;
+        int counter;
+	int bank1;
+	int bank2;
         bool isValid;
         bool playAgain;
         bool sameTurn;

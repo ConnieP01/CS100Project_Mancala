@@ -5,7 +5,8 @@
 
 int main() {
 
-        MancalaGame* newgame = new MancalaGame();
-
-        newgame->GameUpdate();
+     //   MancalaGame* newgame = new MancalaGame();
+ MancalaGame* game = MancalaGame::getInstance();
+game->GameUpdate();
+       // newgame->GameUpdate();
 }
