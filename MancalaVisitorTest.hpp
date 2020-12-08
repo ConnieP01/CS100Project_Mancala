@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 #include <iostream>
-#include "BoardManager.cpp"
+#include "BoardManager.hpp"
 
 using namespace std; 
 
