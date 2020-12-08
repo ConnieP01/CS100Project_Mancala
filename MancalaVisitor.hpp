@@ -3,22 +3,29 @@
 
 #include <iostream> 
 #include "GameObjects.hpp"
+#include "BoardManager.hpp"
+#include "MancalaGame.hpp"
+
+using namespace std;
+
+class BoardManager;
+class MancalaGame;
 
 class MancalaVisitor {
 	public: 
 		 MancalaVisitor() {;}
-		void VisitPocket(GameObjects* p){
+		void VisitPocket(GameObjects* p); /*{
 			 p->AddPieces(1);
-			/*
+			
  			If the last piece you drop is in an empty pocket on your side, you capture that piece and any pieces in the pocket directly
   			opposite.
   			if(p->GetPieces() == 1){
 				p->SetPieces(0);
 				addBank++;
 				start-> 
-  			*/
-		}
-        void VisitBank(GameObjects* b){b->AddPieces(1);}
+  			
+		}*/
+        void VisitBank(GameObjects* b)/*{b->AddPieces(1);i}*/;
 	private:
 		int addBank = 0;
 };
