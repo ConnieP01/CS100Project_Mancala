@@ -60,7 +60,8 @@ void MancalaGame::GameUpdate(){
                         }
 			bank1 = start->GetObject(1, 6)->GetPieces();
 			bank2 = start->GetObject(0, 6)->GetPieces();
-                        cout << "Player " << winner << " wins!" << endl;
+                        start->DisplayBoard();
+			cout << "Player " << winner << " wins!" << endl;
                 }
                 else{
                         cout << "It's a tie!" << endl;

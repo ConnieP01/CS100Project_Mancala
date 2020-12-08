@@ -31,19 +31,16 @@ TEST(InGameVisitorTest, AddPocket0) {
         EXPECT_EQ(newhand, 1);
 }
 TEST(MainMenu, OptionOne) {
-//   MancalaGame* test = new MancalaGame();
-   	 MancalaGame* game = MancalaGame::getInstance();
+ 	MancalaGame* game = MancalaGame::getInstance();
 	EXPECT_EQ(game->MainMenu(), 1);
 }
 
 TEST(MainMenu, OptionTwo) {
- // MancalaGame* test = new MancalaGame();
   	MancalaGame* game = MancalaGame::getInstance();
 	EXPECT_EQ(game->MainMenu(), 2);
 }
 
 TEST(MancalaGame, Player1Win) {
- // MancalaGame* test = new MancalaGame();
  	 MancalaGame* game = MancalaGame::getInstance();
 	 game->GameUpdate();
 	 EXPECT_TRUE(game->getBank1() > game->getBank2());
