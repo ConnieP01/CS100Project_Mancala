@@ -7,10 +7,6 @@
 class MancalaVisitor {
 	public: 
 		 MancalaVisitor() {;}
-/*
-		virtual void VisitPocket(Pocket* p) = 0;
-		virtual void VisitBank(Bank* b) = 0;
-*/
 		void VisitPocket(GameObjects* p){
 			 p->AddPieces(1);
 			/*

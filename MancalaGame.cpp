@@ -130,13 +130,15 @@ void MancalaGame::TakeTurn() {
                 else if(rowInput == 1){
                         column++;
                         while(counter > 0 && column <= 5){
-                                start->GetObject(rowInput, column)->AddPieces(1);
+                               // start->GetObject(rowInput, column)->AddPieces(1);
+				start->GetObject(rowInput, column)->Accept(visit1);
                                 column++;
                                 counter--;
                         }
                         if(counter > 0 && playerTurn%2 == 1)
                         {
-                                start->GetBank1()->AddPieces(1);
+                               // start->GetBank1()->AddPieces(1);
+                               start->GetBank2()->Accept(visit1);
                                 column++;
                                 counter--;
                         }
