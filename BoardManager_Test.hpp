@@ -87,5 +87,33 @@ TEST(BoardTest, TallyWinner2) {
     EXPECT_EQ(test->TallyWinner(), 2);
 }
 
+TEST(MancalaVisitorTest, AddPocket) {
+        BoardManager * gameTest = new BoardManager();
+        gameTest->SetStartPieces();
+        MancalaVisitor* vTest;
+        gameTest->GetObject(1,4)->Accept(vTest);
+        int hand = gameTest->GetNumPieces(1,4);
+        EXPECT_EQ(hand, 5);
+}
 
+
+TEST(MancalaVisitorTest, AddBank) {
+        BoardManager * gameTest = new BoardManager();
+        MancalaVisitor* vTest;
+        gameTest->GetBank1()->Accept(vTest);
+        int hand = gameTest->GetBank1()->GetPieces();
+        EXPECT_EQ(hand, 1);
+}
+
+TEST(MancalaVisitorTest, AddPocket0) {
+        BoardManager * gameTest = new BoardManager();
+        MancalaVisitor* vTest;
+        gameTest->GetObject(0,3)->Accept(vTest);
+        int hand = gameTest->GetNumPieces(0,3);
+	gameTest->GetObject(0,3)->SetPieces(0);
+	gameTest->GetObject(0,3)->Accept(vTest);
+	int newhand = gameTest->GetNumPieces(0,3);
+        EXPECT_EQ(hand, 5);
+	EXPECT_EQ(newhand, 1);
+}
 #endif //__BOARDMANAGER_TEST_HPP__
