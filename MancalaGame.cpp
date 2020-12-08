@@ -138,7 +138,7 @@ void MancalaGame::TakeTurn() {
                         if(counter > 0 && playerTurn%2 == 1)
                         {
                                // start->GetBank1()->AddPieces(1);
-                               start->GetBank2()->Accept(visit1);
+                               start->GetBank1()->Accept(visit1);
                                 column++;
                                 counter--;
                         }
