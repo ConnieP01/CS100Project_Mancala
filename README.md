@@ -78,7 +78,7 @@
  > Open the MancalaRunner exe (./MancalaRunner.exe) to run the program and play the game.
  ## Testing
  > We used google test in order to test different parts of our project at once. These include test cases for adding pieces in the pockets and banks of our Mancala game board, getting the number of pieces at a certain pocket, and testing to see if the main menu options work. We also used google test in order to create an integrated test to make sure everything was working together as they should.
- > Three tests for MancalaGame.cpp will run when you run unit_tests: Play option test, quit option test, Player1 wins test. These are done by running the unit test, and then entering 1 (for play) and then 2 (for quit) for the first two tests. For the third test, press 1 to play, then enter the following inputs (these inputs result in player 1 winning the game):
+ > Three tests for MancalaGame.cpp will run when you run unit_tests: Play option test, quit option test, Player1 wins test. These are done by running the unit test, and then entering 1 (for play) and then 2 (for quit) for the first two tests. For the third test, press 1 to play, then enter the following inputs (these inputs result in player 1 winning the game). Press enter after each number:
 1
 3
 0
