@@ -4,6 +4,7 @@
 #include "GameObjects.hpp"
 #include "MancalaVisitor.hpp"
 #include "BoardManager.hpp"
+#include "MancalaGame.hpp"
 class Pocket: public GameObjects {
         private:
             int PlayerNum;
@@ -14,8 +15,8 @@ class Pocket: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void Accept(MancalaVisitor* visitor, BoardManager * board){
-                visitor->VisitPocket(visitor, board);
+            void Accept(MancalaVisitor* visitor, BoardManager * board, int count, int i, int j){
+                visitor->VisitPocket(this, board, count, i, j);
             }
 
 

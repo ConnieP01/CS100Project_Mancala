@@ -14,18 +14,16 @@ using namespace std;
 class MancalaVisitor {
 	public: 
 		 MancalaVisitor() {;}
-		void VisitPocket(GameObjects* p, BoardManager* bm) {
+		void VisitPocket(GameObjects* p, BoardManager* bm, int count, int i, int j) {
 			 p->AddPieces(1);
-			
-/* 			MancalaGame* game = game->getInstance();
-                        int count = game->thisObject()->getCount();
+			cout<<"Hello"<<endl;
                         cout<<"Count: " <<count<<endl;
                         cout<<"Pieces: "<<p->GetPieces()<<endl;
-                        if((p->GetPieces() == 1) && (count == 0)){
-                                int row = game->getRow();
+                      /*  if((p->GetPieces() == 1) && (count == 0)){
+                                int row = i;
                                 cout<<"Row: "<<row<<endl;
                                 int opposite;
-                                int col = game->getCol();
+                                int col = j;
                                 cout<<"Column: "<<col<<endl;
                                 p->SetPieces(0);
                                 if(row == 1){
@@ -34,21 +32,19 @@ class MancalaVisitor {
                                 else if(row == 0){
                                         opposite=1;
                                 }
-                                BoardManager* game1 = new BoardManager();
-                                game1 = game->getObject();
-                                int hand = game1->GetNumPieces(opposite,col) + 1;
-                                game1->GetObject(opposite,col)->SetPieces(0);
+                                int hand = bm->GetNumPieces(opposite,col) + 1;
+                                bm->GetObject(opposite,col)->SetPieces(0);
 
                                 if(row == 0) {
-                                        game1->GetBank2()->AddPieces(hand);
+                                        bm->GetBank2()->AddPieces(hand);
                                  }
                                 else{
-                                        game1->GetBank1()->AddPieces(hand);
+                                        bm->GetBank1()->AddPieces(hand);
                                 }
 			}
-*/		
+		*/
 		}
-        void VisitBank(GameObjects* b, BoardManager * bm){b->AddPieces(1);}
+        void VisitBank(GameObjects* b, BoardManager * bm, int count, int i, int j){b->AddPieces(1);}
 	private:
 		int addBank = 0;
 };

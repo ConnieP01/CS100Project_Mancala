@@ -106,14 +106,14 @@ void MancalaGame::TakeTurn() {
 			column--;
 			while(counter > 0 && column >= 0){
 				//start->GetObject(rowInput, column)->AddPieces(1);
-				start->GetObject(rowInput, column)->Accept(visit1,start);
+				start->GetObject(rowInput, column)->Accept(visit1,start, counter, rowInput, column);
 				column--;
 				counter--;
 			}
 			if(counter > 0 && playerTurn%2 == 0)
                         {
 	                        //start->GetBank2()->AddPieces(1);
-	                        start->GetBank2()->Accept(visit1, start);
+	                        start->GetBank2()->Accept(visit1, start, counter, rowInput, column);
 				column--;	
 				counter--;
 
@@ -131,14 +131,14 @@ void MancalaGame::TakeTurn() {
                         column++;
                         while(counter > 0 && column <= 5){
                                // start->GetObject(rowInput, column)->AddPieces(1);
-				start->GetObject(rowInput, column)->Accept(visit1, start);
+				start->GetObject(rowInput, column)->Accept(visit1, start, counter, rowInput, column);
                                 column++;
                                 counter--;
                         }
                         if(counter > 0 && playerTurn%2 == 1)
                         {
                                // start->GetBank1()->AddPieces(1);
-                               start->GetBank1()->Accept(visit1, start);
+                               start->GetBank1()->Accept(visit1, start, counter, rowInput, column);
                                 column++;
                                 counter--;
                         }
