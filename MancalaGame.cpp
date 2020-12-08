@@ -51,7 +51,6 @@ void MancalaGame::GameUpdate(){
                 if(winner != 3){
                         for(int i = 0; i < 2; i++){
                                 for(int j = 0; j < 6; j++){
-	        			cout << getRow() << endl;
         	                        start->GetObject(i, j)->SetPieces(0);
                                 }
                         }
@@ -102,14 +101,14 @@ void MancalaGame::TakeTurn() {
 			column--;
 			while(counter > 0 && column >= 0){
 				//start->GetObject(rowInput, column)->AddPieces(1);
-				start->GetObject(rowInput, column)->Accept(visit1);
+				start->GetObject(rowInput, column)->Accept(visit1, rowInput, column);
 				column--;
 				counter--;
 			}
 			if(counter > 0 && playerTurn%2 == 0)
                         {
 	                        //start->GetBank2()->AddPieces(1);
-	                        start->GetBank2()->Accept(visit1);
+	                        start->GetBank2()->Accept(visit1, rowInput, column);
 				column--;	
 				counter--;
 
@@ -126,13 +125,16 @@ void MancalaGame::TakeTurn() {
                 else if(rowInput == 1){
                         column++;
                         while(counter > 0 && column <= 5){
-                                start->GetObject(rowInput, column)->AddPieces(1);
+                                //start->GetObject(rowInput, column)->AddPieces(1);
+                                start->GetObject(rowInput, column)->Accept(visit1, rowInput, column);
+				cout<<"Game column: "<<column<<endl;
                                 column++;
                                 counter--;
                         }
                         if(counter > 0 && playerTurn%2 == 1)
                         {
-                                start->GetBank1()->AddPieces(1);
+                                //start->GetBank1()->AddPieces(1);
+                                start->GetBank1()->Accept(visit1, rowInput, column);
                                 column++;
                                 counter--;
                         }
@@ -213,4 +215,8 @@ int MancalaGame::getCol(){
 
 int MancalaGame::getCount(){
 	return counter;
+}
+
+BoardManager* MancalaGame::getObject(){
+	return start;
 }
