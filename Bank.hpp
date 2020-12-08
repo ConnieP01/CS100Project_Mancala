@@ -3,6 +3,7 @@
 
 #include "GameObjects.hpp"
 #include "MancalaVisitor.hpp"
+#include "BoardManager.hpp"
 class Bank: public GameObjects {
         private:
             int PlayerNum;
@@ -13,8 +14,8 @@ class Bank: public GameObjects {
                 PlayerNum=playernum;
             }
 
-          	void Accept(MancalaVisitor* visitor){
-                visitor->VisitBank(this);
+          	void Accept(MancalaVisitor* visitor, BoardManager * board){
+                visitor->VisitBank(visitor, board);
             }
 
             void AddPieces(int num){ Pieces+=num; } //add a number of pieces

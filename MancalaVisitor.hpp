@@ -4,7 +4,7 @@
 #include <iostream> 
 #include "GameObjects.hpp"
 //#include "MancalaGame.hpp"
-//#include "BoardManager.hpp"
+#include "BoardManager.hpp"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ using namespace std;
 class MancalaVisitor {
 	public: 
 		 MancalaVisitor() {;}
-		void VisitPocket(GameObjects* p) {
+		void VisitPocket(GameObjects* p, BoardManager* bm) {
 			 p->AddPieces(1);
 			
 /* 			MancalaGame* game = game->getInstance();
@@ -48,7 +48,7 @@ class MancalaVisitor {
 			}
 */		
 		}
-        void VisitBank(GameObjects* b){b->AddPieces(1);}
+        void VisitBank(GameObjects* b, BoardManager * bm){b->AddPieces(1);}
 	private:
 		int addBank = 0;
 };
