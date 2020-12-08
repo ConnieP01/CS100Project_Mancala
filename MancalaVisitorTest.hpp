@@ -1,10 +1,10 @@
-#ifndef _MANCALAVISITOR_TEST_HPP
-#define _MANCALAVISITOR_TEST_HPP
+#ifndef _MANCALAVISITORTEST_HPP
+#define _MANCALAVISITORTEST_HPP
 
 #include "gtest/gtest.h"
 
 #include <iostream>
-#include "BoardManager.hpp"
+#include "BoardManager.cpp"
 
 using namespace std;
 
