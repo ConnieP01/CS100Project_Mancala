@@ -74,6 +74,7 @@
   ![Mancala Input](https://github.com/cs100/final-project-mhe034-cpak014-jchae007/blob/master/Output.png)
   
  ## Installation/Usage
+ > Make a MancalaRunner exe file by doing g++ -std=c++11 -o MancalaRunner.exe main.cpp
  > Open the MancalaRunner exe (./MancalaRunner.exe) to run the program and play the game.
  ## Testing
  > We used google test in order to test different parts of our project at once. These include test cases for adding pieces in the pockets and banks of our Mancala game board, getting the number of pieces at a certain pocket, and testing to see if the main menu options work. We also used google test in order to create an integrated test to make sure everything was working together as they should.
