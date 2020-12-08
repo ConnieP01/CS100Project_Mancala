@@ -7,6 +7,7 @@
 #include "MancalaVisitor.hpp"
 
 class BoardManager;
+class MancalaVisitor;
 
 class MancalaGame {
     private:
@@ -24,7 +25,7 @@ class MancalaGame {
         bool playAgain;
         bool sameTurn;
 	BoardManager* start = new BoardManager();
-	MancalaVisitor * visit1 = new MancalaVisitor();
+	MancalaVisitor * visit1;
     public:
         MancalaGame();
         void GameUpdate();
@@ -33,5 +34,7 @@ class MancalaGame {
 	int getRow();
 	int getCol();
 	int getCount();
+	BoardManager* getObject();
+	MancalaGame * thisObject(){return this;}
 };
 #endif

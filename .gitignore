@@ -1,3 +1,9 @@
 a.out
 *.exe
 a.exe
+CMakeFiles
+lib/
+MakeFile/
+CMakeCache.txt
+lab
+cmake_install.cmake

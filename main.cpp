@@ -1,6 +1,6 @@
 #include "MancalaGame.cpp"
 #include "BoardManager.cpp"
-#include "MancalaVisitor.hpp"
+#include "MancalaVisitor.cpp"
 //#include "DistVisitor.hpp"
 
 int main() {

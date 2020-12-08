@@ -13,8 +13,8 @@ class Pocket: public GameObjects {
                 PlayerNum=playernum;
             }
 
-            void Accept(MancalaVisitor* visitor){
-                visitor->VisitPocket(this);
+            void Accept(MancalaVisitor* visitor, int i, int j){
+                visitor->VisitPocket(this, i, j);
             }
 
 
