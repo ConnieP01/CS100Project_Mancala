@@ -16,10 +16,9 @@ class MancalaVisitor {
 		 MancalaVisitor() {;}
 		void VisitPocket(GameObjects* p, BoardManager* bm, int count, int i, int j) {
 			 p->AddPieces(1);
-			cout<<"Hello"<<endl;
                         cout<<"Count: " <<count<<endl;
                         cout<<"Pieces: "<<p->GetPieces()<<endl;
-                      /*  if((p->GetPieces() == 1) && (count == 0)){
+                        if((p->GetPieces() == 1) && (count == 0)){
                                 int row = i;
                                 cout<<"Row: "<<row<<endl;
                                 int opposite;
@@ -42,7 +41,7 @@ class MancalaVisitor {
                                         bm->GetBank1()->AddPieces(hand);
                                 }
 			}
-		*/
+		
 		}
         void VisitBank(GameObjects* b, BoardManager * bm, int count, int i, int j){b->AddPieces(1);}
 	private:

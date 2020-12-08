@@ -5,9 +5,10 @@
 #include "Pocket.hpp"
 #include "Bank.hpp"
 #include "GameObjects.hpp"
-//#include "visitor.hpp"
+//#include "MancalaVisitor.hpp"
 using namespace std;
 
+class MancalaVisitor;
 class BoardManager{
         private:
             int row = 2;

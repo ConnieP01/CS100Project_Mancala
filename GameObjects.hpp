@@ -3,7 +3,7 @@
 
 #include <vector>
 //#include "MancalaVisitor.hpp"
-
+//
 using namespace std;
 class MancalaVisitor;
 class BoardManager;
