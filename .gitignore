@@ -1,0 +1,10 @@
+a.out
+*.exe
+a.exe
+CMakeFiles/
+lib/
+.gitmodules
+Makefile
+test
+lab
+cmake_install.cmake
